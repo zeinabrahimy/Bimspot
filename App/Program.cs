@@ -9,7 +9,7 @@ namespace BimspotTest.App
 	{
 		static async Task Main(string[] args)
 		{
-			IConfiguration configuration = 
+			IConfiguration configuration =
 				new ConfigurationBuilder()
 						.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
 						.AddEnvironmentVariables()
@@ -17,7 +17,7 @@ namespace BimspotTest.App
 						.Build();
 
 			var services = ConfigureServices(configuration);
-			
+
 			var serviceProvider = services.BuildServiceProvider();
 
 			await serviceProvider.GetService<ConsoleApplication>().Run();
